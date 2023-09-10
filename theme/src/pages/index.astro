@@ -1,79 +1,106 @@
 ---
 import { Container, FeatureCard } from '@littlesticks/odyssey-theme-components';
 
-import Layout from '../layouts/Page.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+import {Icon} from 'astro-icon'
+import {
+  AnnouncementBar,
+	Button,
+	CustomerQuoteSection,
+	ThreeColumnTextSection,
+	YouTubeEmbedSection,
+  StickyTextImageSection,
+  CtaCardSection
+} from '@littlesticks/odyssey-theme-components';
+import Layout from '../layouts/Page.astro';
+import TextAndImageHero from '../components/sections/heros/TextAndImageHero.astro';
+
+const seo = {
+	title: 'Landing Page #1 | Astro Odyssey Theme',
+	description: 'Landing Page #1 | Astro Odyssey Theme',
+};
 ---
 
-<Layout>
-	<HomeHeroSection />
-	<Container>
-		<section class="feature-card__section">
-			<h2>Landing Pages</h2>
-			<p>
-				Use one of our landing pages to jumpstart your website or
-				ad campaign.
-			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/landing-pages/landing-1" title="Landing Page 1" imgSrc="/assets/images/home/screenshots/landing-1">
-				</FeatureCard>
-				<FeatureCard href="/landing-pages/landing-2" title="Landing Page 2" imgSrc="/assets/images/home/screenshots/landing-2">
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
 
-	<Container>
-		<section class="feature-card__section">
-			<h2>Company Pages</h2>
-			<p>
-				Use one of our prebuilt company pages for your about page, contact page,
-				legal pages, blog posts, etc.
-			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/company/about" title="About Page" imgSrc="/assets/images/home/screenshots/about">
-				</FeatureCard>
-				<FeatureCard href="/company/contact" title="Contact Page" imgSrc="/assets/images/home/screenshots/contact">
-				</FeatureCard>
-				<FeatureCard href="/blog/" title="Blog Page" imgSrc="/assets/images/home/screenshots/blog">
-				</FeatureCard>
-				<FeatureCard
-					href="/blog/posts/remote-work-mental-health"
-					title="Blog Post"
-          imgSrc="/assets/images/home/screenshots/blog-post"
-				>
-				</FeatureCard>
-				<FeatureCard
-					href="/company/legal"
-					imgSrc="/assets/images/home/screenshots/legal"
-					title="Legal Page"
-				>
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
+<Layout seo={seo} >
+	<TextAndImageHero reversed>
+		<div slot="text-container">
+			<h1>OnlyFans Marketing specialists!</h1>
+			<p>Partner with Celestia to jumpstart your OnlyFans account.</p>
+		</div>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/model.png"
+				alt="Astro Odyssee"
+				id="home-hero-image"
+			/>
+		</picture>
+	</TextAndImageHero>
+    <StickyTextImageSection>
+    <div slot="text-container" id="scrollTarget">
+      <h3>Expertise scaling</h3>
+      <p>
+        Within this captivating screenshot, you'll witness the exceptional prowess of our dedicated marketing team.
+         In a mere span of a few months, we've achieved an astonishing financial milestone, scaling this account to over
+          $100,000. This remarkable success can be attributed to our unwavering commitment and substantial investments
+           in the art of marketing, specifically tailored to elevate the visibility and engagement of our exceptional
+            models. We take pride in our ability to craft and execute innovative marketing strategies that not only
+             attract but also captivate audiences, ultimately driving significant financial growth and recognition
+              for our clients.
+      </p>
+      <h3>No more working!</h3>
+      <p>
+        We will take over the entire boring work for you. This means 24/7 chatting, posting on social media,
+        accounting and taxes and partnering with other brands!
+      </p>
+    </div>
+     <picture slot="image-container">
+      <img
+        src="/assets/images/landing-1/screenshot.png"
+        alt="Astro Odyssey"
+        loading="lazy"
+      />
+    </picture>
+  </StickyTextImageSection>
+	<CustomerQuoteSection
+		quoteText="Celestia Marketing has been instrumental in our success. Their marketing expertise and strategies have significantly boosted our brand visibility and engagement."
+		customerName="Selina"
+	/>
 
-	<Container>
-		<section class="feature-card__section">
-			<h2>Theme Pages</h2>
-			<p>Learn more about how to set up and use the Odyssey Theme.</p>
-			<div class="feature-card__grid">
-				<FeatureCard
-					href="/theme/get-started"
-					imgSrc="/assets/images/home/screenshots/get-started"
-					title="Get Started"
-				>
-				</FeatureCard>
-				<FeatureCard
-					href="/theme/style-guide"
-					imgSrc="/assets/images/home/screenshots/style-guide"
-					title="Style Guide"
-				>
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
+	<ThreeColumnTextSection>
+		<div slot="column-1-body">
+			<h2>Why?</h2>
+			<p>
+				"We're the best at what we do. With our proven track record,
+				 increasing OnlyFans earnings by 5x is a breeze!"
+			</p>
+		</div>
+		<div slot="column-2-body">
+			<h2>How?</h2>
+			<p>
+				Just send us a partner email. Our Account Manager will reach out to you.
+			</p>
+		</div>
+		<div slot="column-3-body">
+			<h2>Privacy?</h2>
+			<p>
+				All your data and information will be private. We hold privacy to the highest standard.
+			</p>
+		</div>
+	</ThreeColumnTextSection>
+
+
+
+
+  <CtaCardSection background="var(--theme-surface-2)" color="var(--theme-on-surface-2)">
+    <h2>Start partnering with us today!</h2>
+    <p>Send us an email and we will get back to you ASAP!</p>
+    <h3>support@celestia-agency.com</h3>
+  </CtaCardSection>
+
 </Layout>
+
 
 <style>
 	.feature-card__section {
